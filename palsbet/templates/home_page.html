@@ -1,0 +1,131 @@
+{% extends "main_template.html" %}
+
+
+{% block title %}
+
+PalsBet.com - provides free football tips and predictions, free analysis, football form and statistics, the latest results and league tables and much more.
+
+{% endblock %}
+
+{% block header %}
+
+{% include "header.html" %}
+
+{% endblock %}
+
+{% block over_view_contact %}
+
+{% include "over_view_contact.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+{% for item in home_page_teams %}
+{% if forloop.first %}
+       <i><p>{{item.published_date}}<p></i>
+   {%endif%}
+{% endfor %}
+
+<table border="2" cellpadding = "5">
+
+  <tr style='background-color: indigo'>
+<th style='color: white'>Country</th>
+<th style='color: white'>Home Team</th>
+<th style='color: white'>Home Score</th>
+<th style='color: white'>Away Score</th>
+<th style='color: white'>Away Team</th>
+<th style='color: white'>Prediction</th>
+<th style='color: white'>Status</th>
+</tr>
+
+    {% for item in home_page_teams %}
+    <tr>
+        <td style='background-color: plum;' >{{ item.country }}</td>
+
+        <td >{{ item.home_team }}</td>
+
+        <td style='background-color: plum;' >{{ item.home_score}}</td>
+
+        <td style='background-color: plum;' >{{ item.away_score}}</td>
+
+        <td>{{ item.away_team}}</td>
+
+        <td style='background-color: plum;' >{{ item.prediction}}</td>
+
+        {% if item.status == 'Lost' %}
+
+        <td style='background-color: #FF5733;'>{{ item.status}}</td>
+
+        {% elif item.status == 'Won' %}
+
+        <td style='background-color: Limegreen;' >{{ item.status}}</td>
+
+        {% else %}
+
+        <td >{{ item.status}}</td>
+
+        {% endif %}
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<form action="/viewolderesults/" method="post">
+  {% csrf_token %}
+ <label for="previous"></label>
+      <div  align="right" ><input type="submit" id="back" name="previous"value="VIEW OLDER RESULTS"   /> </div>
+ </form>
+ <br>
+
+ <h2 align="center">
+  Most asked questions
+</h2>
+
+
+<div class="w3-row-padding">
+  <div class="w3-third">
+
+<h4 >
+  How many odds do we post in a day?
+</h4>
+<p>
+  We normally give out two groups in vip one with 2 odds and the other one with 3 odds.
+  This minimises any chance of loosing on our punter's side.Incase one group fails the
+   other group gets back the money.
+  Beside vip tips we also have roll over plan of 1.40 odds to 1.60 odds daily
+</p>
+</div>
+
+<div class="w3-third">
+
+  <h4>
+    Which means do we send our vip tips?
+  </h4>
+  <p>
+    Our Vip Subscribers are provided with credentials(Username and Password) used in logging in to our secured platform.
+  </p>
+</div>
+
+<div class="w3-third">
+  <h4>
+    When do we send our vip tips?
+  </h4>
+  <p>
+    We send our vip tips at around noon for easy betting on our punters
+  </p>
+</div>
+</div>
+
+<br>
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html" %}
+
+{% endblock %}

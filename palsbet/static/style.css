@@ -1,0 +1,27 @@
+
+#button {
+    background-color:blue;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 12px;
+    width: 30%;
+}
+
+#back {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 12px;
+    width: 30%;
+
+  }

@@ -1,0 +1,64 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+
+PalsBet.com - Vip Tips
+
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+{% include "vipheader.html" %}
+
+<div align = "center" >
+  <div class="w3-row-padding">
+    <div class="w3-third">
+  <h4 style="color:red">
+    Any Question?
+  </h4>
+
+<h4>
+  CONTACT US VIA WHATSAPP +254798265307 <font style="color:blue"> OR EMAIL US ON </font> <i>palsbet1@gmail.com<i>
+  </h4>
+</div>
+
+<div class="w3-third">
+  <p>
+    PalsBet is all about trust
+  </p>
+
+
+  <p>
+    Your log in credentials are meant for you alone
+  </p>
+</div>
+
+<div class="w3-third">
+  <p>
+    Sharing them with anyone else may lead to suspension of your account
+    <p>
+  <p>
+    Use the navigation bar to check out our Services
+  </p>
+</div>
+</div>
+</div>
+
+
+{% else %}
+
+  <p>You are not logged in</p>
+
+  <a href="{% url 'login' %}">login</a>
+
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html" %}
+
+{% endblock %}

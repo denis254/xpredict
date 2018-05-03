@@ -1,0 +1,54 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+
+PalsBet - VipTips
+
+{% endblock %}
+
+{% block header %}
+
+{% include "header.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<h3 align = "center">Thanks for stopping by!</h3>
+<p align = "center">We hope to see you again soon.</p>
+
+<p align = "center">
+  This page is for those who have subscribed to 1XPredict.com services and given login credentials(Username and Password)
+</p>
+
+<p align = "center">If you are one of them click Log In To 1XPredict Vip Page button below</p>
+<br>
+<div align = "center">
+      <form action="/accounts/login/" method="post">
+        {% csrf_token %}
+
+    <label for="login"></label>
+    <input type="submit" id="back" name="skrill" value="Log In To 1XPredict Vip Page "  />
+    </form>
+</div>
+<br>
+
+<p align = "center">If not subscriber</p>
+
+<div align = "center">
+      <form action="/payment/" method="post">
+        {% csrf_token %}
+
+    <label for="login"></label>
+    <input type="submit" id="back" name="skrill" value="Join 1XPredict Vip Tips"  />
+    </form>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html" %}
+
+{% endblock %}

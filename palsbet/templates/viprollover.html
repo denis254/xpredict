@@ -1,0 +1,92 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+
+PalsBet.com - Vip Services
+
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+{% include "vipheader.html" %}
+
+<div align = "center" >
+
+  <h4>
+    Roll Over Of The Day
+</h4>
+  {% for item in rollover %}
+  {% if forloop.first %}
+         <i><p>{{item.published_date}}</p></i>
+     {%endif%}
+  {% endfor %}
+
+  <table border="2" cellpadding = "5">
+
+    <tr style='background-color: indigo'>
+  <th style='color: white'>Country</th>
+  <th style='color: white'>Home Team</th>
+  <th style='color: white'>Home Score</th>
+  <th style='color: white'>Away Score</th>
+  <th style='color: white'>Away Team</th>
+  <th style='color: white'>Prediction</th>
+  <th style='color: white'>Status</th>
+  </tr>
+
+      {% for item in rollover %}
+      <tr>
+          <td style='background-color: plum;' >{{ item.country }}</td>
+
+          <td >{{ item.home_team }}</td>
+
+          <td style='background-color: plum;' >{{ item.home_score}}</td>
+
+          <td style='background-color: plum;' >{{ item.away_score}}</td>
+
+          <td>{{ item.away_team}}</td>
+
+          <td style='background-color: plum;' >{{ item.prediction}}</td>
+
+          {% if item.status == 'Lost' %}
+
+          <td style='background-color: #FF5733;'>{{ item.status}}</td>
+
+          {% elif item.status == 'Won' %}
+
+          <td style='background-color: Limegreen;' >{{ item.status}}</td>
+
+          {% else %}
+
+          <td >{{ item.status}}</td>
+
+          {% endif %}
+
+
+      </tr>
+      {% endfor %}
+  </table>
+
+  <p align = "right">
+    <i>Good Luck</i>
+  </p>
+
+</div>
+
+
+{% else %}
+
+  <p>You are not logged in</p>
+
+  <a href="{% url 'login' %}">login</a>
+
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html" %}
+
+{% endblock %}

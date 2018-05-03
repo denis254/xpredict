@@ -1,0 +1,18 @@
+{% extends "main_template.html" %}
+
+{% block header %}
+
+<div style="background-color:blue" style="color:white"><div align = "right">  WELCOME {{ user.username }}/   <a href="{% url 'logout' %}">LOG OUT</a></div></div>
+
+
+<ul class="topnav">
+  <h3 align = "center" ><font style="color:yellow">1X</font><font style="color:white">Predict</font></h3>
+  <p align = "center" >We predict, You bet<p>
+  <li><a  href="/homevip/"><font style="color:white">Home</font></a></li>
+  <li><a href="/homeviptips/"><font style="color:white">Vip Tips</font></a></li>
+  <li><a  href="/homepunterpicks/"><font style="color:white">Punter Pick </font></a></li>
+  <li><a href="/homerollover/"><font style="color:white">Roll Over</font></a></li>
+</ul>
+
+
+{% endblock %}
