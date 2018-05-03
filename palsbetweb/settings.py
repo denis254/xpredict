@@ -141,7 +141,7 @@ if 'DATABASE_URL' in os.environ:
     import dj_database_url
     DATABASES = {'default': dj_database_url.config()}
 
-admin.site.site_header = '1XPredict Admin Panel'
+admin.site.site_header = '1XPredict W Admin Panel'
 admin.site.site_title = '1XPredict Admin Panel'
 
 ADMINS = (('Denis Kiprono', 'deniskiprono4@gmail.com'),)
