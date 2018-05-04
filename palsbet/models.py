@@ -21,7 +21,7 @@ class Visitor(models.Model):
 
 class FreeTipsGames(models.Model):
 
-    published_date = models.DateTimeField('Date Published')
+    published_date = models.DateTimeField('Date Published', auto_now_add=True)
 
     country = models.CharField(max_length = 200)
 
@@ -44,7 +44,7 @@ class FreeTipsGames(models.Model):
 
 class SingleBetGames(models.Model):
 
-    published_date = models.DateTimeField('Date Published')
+    published_date = models.DateTimeField('Date Published', auto_now_add=True)
 
     country = models.CharField(max_length = 200)
 
@@ -65,7 +65,7 @@ class SingleBetGames(models.Model):
 
 class VipTips(models.Model):
 
-    published_date = models.DateTimeField('Date Published')
+    published_date = models.DateTimeField('Date Published', auto_now_add=True)
 
     country = models.CharField(max_length = 200)
 
@@ -87,7 +87,7 @@ class VipTips(models.Model):
 
 class PunterPick(models.Model):
 
-    published_date = models.DateTimeField('Date Published')
+    published_date = models.DateTimeField('Date Published', auto_now_add=True)
 
     country = models.CharField(max_length = 200)
 
@@ -109,7 +109,7 @@ class PunterPick(models.Model):
 
 class RollOver(models.Model):
 
-    published_date = models.DateTimeField('Date Published')
+    published_date = models.DateTimeField('Date Published', auto_now_add=True)
 
     country = models.CharField(max_length = 200)
 
