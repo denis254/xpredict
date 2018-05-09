@@ -21,6 +21,8 @@
 
 {% block content %}
 
+{% include "slideshow.html" %}
+
 {% for item in home_page_teams %}
 {% if forloop.first %}
        <i><p>{{item.published_date}}<p></i>
