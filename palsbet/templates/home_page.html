@@ -15,13 +15,13 @@
 
 {% block over_view_contact %}
 
+{% include "slideshow.html" %}
+
 {% include "over_view_contact.html" %}
 
 {% endblock %}
 
 {% block content %}
-
-{% include "slideshow.html" %}
 
 {% for item in home_page_teams %}
 {% if forloop.first %}
