@@ -12,7 +12,7 @@ from rest_framework import viewsets
 
 
 def optout(request):
-    return redirect("http://www.craftechsolution.com/")
+    return redirect("http://www.crafttechsolution.com/")
 
 class SingleBetGamesViewSet(viewsets.ModelViewSet):
 
