@@ -26,7 +26,7 @@ urlpatterns = [
 
     path('androidapp/', androidapp),
 
-    path('jackpot/', jackpot),
+    path('homejackpot/', jackpot),
 
     path('rollover/', rollover),
 
