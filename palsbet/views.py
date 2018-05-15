@@ -52,9 +52,9 @@ def androidapp(request):
 
 def jackpot(request):
 
-    template_name = 'jackpot.html'
+    template_name = 'hjackpot.html'
 
-    return render(request, 'jackpot.html')
+    return render(request, 'hjackpot.html')
 
 def rollover(request):
 
