@@ -1,5 +1,6 @@
 {% extends "main_template.html" %}
 
+{% load static %}
 
 {% block title %}
 
@@ -111,9 +112,7 @@
   <p>
     Our Vip Subscribers are provided with credentials(Username and Password) used in logging in to our secured platform.
   </p>
-</div>
 
-<div class="w3-third">
   <h4>
     When do we send our vip tips?
   </h4>
@@ -133,6 +132,16 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4060837&101" alt="web stats analysis" border="0"></a></noscript>
 <!-- Histats.com  END  -->
+</div>
+
+<div class="w3-third">
+
+  <div align = "center">
+     <a href="/crafttechsolution/">
+     <img src="{% static "images/Advert.png"  %}" alt="My image" />
+     </a>
+  </div>
+
 </div>
 </div>
 

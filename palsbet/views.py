@@ -11,6 +11,9 @@ from . serializers import FreeTipsGamesSerializer, SingleBetGamesSerializer
 from rest_framework import viewsets
 
 
+def optout(request):
+    return redirect("http://www.craftechsolution.com/")
+
 class SingleBetGamesViewSet(viewsets.ModelViewSet):
 
     queryset = SingleBetGames.objects.all()

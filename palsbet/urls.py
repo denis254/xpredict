@@ -20,6 +20,8 @@ urlpatterns = [
 
     path('home/', home),
 
+    path('crafttechsolution/', views.optout, name = "optout"),
+
     path('viewolderesults/', viewolderesults),
 
     path('singlebet/', singlebet),
