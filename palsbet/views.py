@@ -56,6 +56,12 @@ def jackpot(request):
 
     return render(request, 'hjackpot.html')
 
+def jackpotp(request):
+
+    template_name = 'jackpot.html'
+
+    return render(request, 'jackpot.html')
+
 def rollover(request):
 
     template_name = 'rollover.html'
