@@ -2,15 +2,25 @@
 
 {% block header %}
 
-<ul class="topnav">
-  <h3 align = "center" ><font style="color:yellow">1X</font><font style="color:white">Predict.com</font></h3>
-  <p align = "center" style="color:white">We predict, You bet<p>
-  <li><a  href="/home/"><font style="color:white"><b>Home</b></font></a></li>
-  <li><a href="/rollover/"><font style="color:white"><b>Roll Over</b></font></a></li>
-  <li><a  href="/payment/"><font style="color:white"><b>Payment</b></font></a></li>
-  <li><a href="/singlebet/"><font style="color:white"><b>Single Bet</b></font></a></li>
-  <li><a href="/jackpot/"><font style="color:white"><b>Jackpot</b></font></a></li>
-  <li class="right"><a href="/viptips/"><font style="color:white"> <b>Vip Tips</b> </font></a></li>
-</ul>
+<div class="w3-bar  w3-blue w3-padding-16 w3-large">
+  <a href="/home/" class="w3-bar-item w3-button"><b>
+    <font style="color:white">1XPredict</font></b></a>
+    <a href="/viptips/"style="float:right" class="w3-bar-item w3-button w3-hide-small">Vip Tips</a>
+    <a href="/jackpot/"style="float:right" class="w3-bar-item w3-button w3-hide-small">Jackpot</a>
+    <a href="/singlebet/" style="float:right" class="w3-bar-item w3-button w3-hide-small">Single Bet</a>
+    <a href="/payment/" style="float:right" class="w3-bar-item w3-button w3-hide-small">Payment</a>
+    <a href="/rollover/" style="float:right" class="w3-bar-item w3-button w3-hide-small">Roll Over</a>
+    <a href="/home/" style="float:right" class="w3-bar-item w3-button w3-hide-small">Home</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium">
+  <a href="/home/" class="w3-bar-item w3-button">Home</a>
+  <a href="/rollover/" class="w3-bar-item w3-button">Roll Over</a>
+  <a href="/payment/" class="w3-bar-item w3-button">Payment</a>
+  <a href="/singlebet/" class="w3-bar-item w3-button">Single Bet</a>
+  <a href="/jackpot/" class="w3-bar-item w3-button">Jackpot</a>
+  <a href="/viptips/" class="w3-bar-item w3-button">Vip Tips</a>
+</div>
 
 {% endblock %}
