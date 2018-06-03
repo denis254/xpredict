@@ -1,5 +1,5 @@
 {% extends "main_template.html" %}
-
+{% load static %}
 {% block title %}
 
 1XPredict.com - Jackpot
@@ -23,13 +23,14 @@
 {% block content %}
 
 <div align = "center">
-<h2 align="center">
+<h2 align="center" class = "h4">
 	1XPredict.com Jackpot Package
 </h2>
 
 
 <div class="w3-row-padding">
   <div class="w3-third">
+		<img src="{% static "images/jp1.jpeg"  %}">
 <p>
 <i>
 	<p><i>1XPredict offers it's vip subscribers with free jackpot and Megajackpot analysis.
@@ -42,7 +43,7 @@
 </div>
 
 <div class="w3-third">
-
+<img src="{% static "images/jp2.jpeg"  %}">
 	<p>
      We also encourage our clients to contribute to our analysis. We have a platform of voting for your favourite teams.
      Other people can see your contribution on the platform.
@@ -51,7 +52,7 @@
 </div>
 
 <div class="w3-third">
-
+<img src="{% static "images/jp3.jpeg"  %}">
 	<p>
 		This is one way of making our suscribers inclusive in analysis. Your win is our win
 	</p>

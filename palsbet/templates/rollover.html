@@ -1,5 +1,5 @@
 {% extends "main_template.html" %}
-
+{% load static %}
 {% block title %}
 
 1XPredict.com - Roll Over Plan
@@ -23,13 +23,14 @@
 {% block content %}
 
 <div align = "center">
-<h2 align="center">
+<h2 align="center" class="h4">
 	1XPredict.com Roll Over Plan
 </h2>
 
 
 <div class="w3-row-padding">
   <div class="w3-third">
+		<img src="{% static "images/r1.jpeg"  %}">
 <p>
 <i>
 	<p><i>1XPredict.com have introduced roll over plan for its VIP subscribers.</i></p>
@@ -41,7 +42,7 @@
 </div>
 
 <div class="w3-third">
-
+<img src="{% static "images/r2.jpeg"  %}">
 	<p>
 		We pick our roll over game based on our best analysis.If in a day we don't have confidence with any game,we skip that day.
 		This leads to 10 to 15 days for roll over plan to complete one cycle.In one month subscription you will participate
@@ -51,7 +52,7 @@
 </div>
 
 <div class="w3-third">
-
+<img src="{% static "images/r3.jpeg"  %}">
 	<p>
 		In our example we started with an initial stake of 3,000 and ended up with 31,624 in one week time.
 	</p>
