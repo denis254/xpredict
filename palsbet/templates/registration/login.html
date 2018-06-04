@@ -16,10 +16,10 @@ PalsBet Log In Page
 
 <div align = "center">
 
-<h2>Login To 1XPredict Vip</h2>
+<h2 class="h4">Login To 1XPredict Vip</h2>
 <form method="post" autocomplete="off" >
   {% csrf_token %}
-  {{ form.as_p }}
+  <div style="color:blue"><b>{{ form.as_p }}</b></div>
   <button type="submit" id="back" >Login</button>
 </form>
 

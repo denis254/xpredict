@@ -1,0 +1,44 @@
+{% extends "main_template.html" %}
+{% load static %}
+{% block title %}
+
+1XPredict.com - Roll Over Plan
+
+{% endblock %}
+
+{% block header %}
+
+{% include "header.html" %}
+
+{% endblock %}
+
+{% block over_view_contact %}
+
+{% include "over_view_contact.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div align = "center">
+<h2 align="center" class="h4">
+	1XPredict.com Notificatiion
+</h2>
+
+{% for item in Notifications %}
+
+<hr>
+      <h4 class="h4">{{item.Head}}</h4>
+      <p>{{item.Body}}<p>
+       <i><p align = "right" style="color:green">{{item.published_date}}<p></i>
+<hr>
+{% endfor %}
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html" %}
+
+{% endblock %}

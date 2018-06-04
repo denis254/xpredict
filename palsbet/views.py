@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.views.generic import TemplateView
 
-from . models import FreeTipsGames, SingleBetGames, VipTips, PunterPick, RollOver
+from . models import FreeTipsGames, SingleBetGames, VipTips, PunterPick, RollOver, Notification
 
 from django.utils import timezone
 
@@ -67,6 +67,23 @@ def rollover(request):
     template_name = 'rollover.html'
 
     return render(request, 'rollover.html')
+
+def notification(request):
+
+    model = Notification
+
+    template_name = 'notification.html'
+
+    args = {}
+
+    Notifications = Notification.objects.filter(
+        published_date__lte=timezone.now()
+    ).order_by('-published_date')[:30]
+
+
+    args ['Notifications'] = Notifications
+
+    return render(request, 'notification.html', args)
 
 def viptips(request):
 

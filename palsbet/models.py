@@ -127,3 +127,11 @@ class RollOver(models.Model):
 
     def __str__(self):
        return self.home_team
+
+class Notification(models.Model):
+       Head = models.TextField(blank=True, null=True)
+       Body = models.TextField(blank=True, null=True)
+       published_date = models.DateTimeField('Date Published', auto_now_add=True)
+
+       def __str__(self):
+          return self.Head
