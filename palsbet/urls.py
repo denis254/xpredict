@@ -10,7 +10,7 @@ router.register(r'FreeTipsGames', views.FreeTipsGamesViewSet)
 
 router.register(r'SingleBetGames', views.SingleBetGamesViewSet)
 
-from . views import rolloverh, notification, jackpotp, punterpick, homeviptips, payment, homevip, timeofsending, modeofsending, home, viewolderesults, singlebet, androidapp, jackpot, rollover, viptips, guide, howmanyodds
+from . views import rolloverh, information, register, notification, jackpotp, punterpick, homeviptips, payment, homevip, timeofsending, modeofsending, home, viewolderesults, singlebet, androidapp, jackpot, rollover, viptips, guide, howmanyodds
 
 urlpatterns = [
 
@@ -19,6 +19,10 @@ urlpatterns = [
     path('', home),
 
     path('home/', home),
+
+    path('information/', information),
+
+    path('register/', register),
 
     path('jackpot/', jackpot),
 

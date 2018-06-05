@@ -1,0 +1,51 @@
+{% extends "main_template.html" %}
+{% load static %}
+{% block title %}
+
+1XPredict.com - Roll Over Plan
+
+{% endblock %}
+
+{% block header %}
+
+{% include "header.html" %}
+
+{% endblock %}
+
+{% block over_view_contact %}
+
+{% include "over_view_contact.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<h2 class="h4" align = "center"><b>Member Sign Up</b></h2>
+
+  <form method="post" align = "center">
+    {% csrf_token %}
+    {% for field in form %}
+   <p>
+    <div style="color:blue"> <b>{{ field.label_tag }} </b></div>
+     {{ field }}
+
+     {% for error in field.errors %}
+       <p style="color: red">{{ error }}</p>
+     {% endfor %}
+   </p>
+ {% endfor %}
+    <br>
+<div align = "center">
+
+    <button type="submit" class="btn btn-success button5 button3" ><h5>Join Our Vip Team</h5></button>
+</div>
+
+  </form>
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html" %}
+
+{% endblock %}

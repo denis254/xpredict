@@ -23,28 +23,18 @@
 
 <p align = "center">If you are one of them click Log In To 1XPredict Vip Page button below</p>
 <br>
-<div align = "center">
-      <form action="/accounts/login/" method="post">
-        {% csrf_token %}
 
-    <label for="login"></label>
-    <input type="submit" id="button" name="skrill" value="Log In To 1XPredict  "  />
-    </form>
+<div align = "center">
+    <a href="/accounts/login/" ><input type="submit" id="button" name="skrill" value="Log In To Vip" /></a>
 </div>
 <br>
 
 <p align = "center">If not subscriber</p>
 
 <div align = "center">
-      <form action="/payment/" method="post">
-        {% csrf_token %}
-
-    <label for="login"></label>
-    <input type="submit" id="back" name="skrill" value="Join 1XPredict "  />
-    </form>
+        <a href="/register/" ><input type="submit" id="back" name="skrill" value="Join Vip Team "/></a>
 </div>
-
-
+<br>
 {% endblock %}
 
 {% block footer %}

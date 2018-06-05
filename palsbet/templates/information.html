@@ -1,0 +1,41 @@
+{% extends "main_template.html" %}
+{% load static %}
+{% block title %}
+
+1XPredict.com - VipTips
+
+{% endblock %}
+
+{% block header %}
+
+{% include "header.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="w3-row-padding" align = "center">
+  <div class="w3-third">
+<img src="{% static "images/login.png"  %}">
+<h4 class="h4">
+  Account
+</h4>
+{% if messages %}
+
+    {% for message in messages %}
+    <div style="color:red">{{ message }}</div>
+    {% endfor %}
+
+{% endif %}<br>
+<a href="/payment/" >
+  <button type="submit" class=" button5 button3" ><b><h4 style="color:white">Recharge You Account</h4></b></button></a>
+</div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html" %}
+
+{% endblock %}

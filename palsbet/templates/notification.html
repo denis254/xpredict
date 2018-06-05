@@ -12,14 +12,23 @@
 
 {% endblock %}
 
+{% block over_view_contact %}
+
+{% include "over_view_contact.html" %}
+
+{% endblock %}
+
 {% block content %}
 
 <div align = "center">
+<h2 align="center" class="h4">
+	1XPredict.com Notificatiion
+</h2>
 
 {% for item in Notifications %}
 
 <hr>
-      <h4 class="h4">{{item.Head}}</h4>
+      <h6 class="h4">{{item.Head}}</h6>
       <p>{{item.Body}}<p>
        <i><p align = "right" style="color:green">{{item.published_date}}<p></i>
 <hr>

@@ -10,6 +10,10 @@ from . serializers import FreeTipsGamesSerializer, SingleBetGamesSerializer
 
 from rest_framework import viewsets
 
+from . forms import RegistrationForm
+
+from django.contrib import messages
+
 
 def optout(request):
     return redirect("http://www.crafttechsolution.com/")
@@ -48,6 +52,12 @@ def androidapp(request):
     template_name = 'androidapp.html'
 
     return render(request, 'androidapp.html')
+
+def information(request):
+
+    template_name = 'information.html'
+
+    return render(request, 'information.html')
 
 
 def jackpot(request):
@@ -230,3 +240,26 @@ def homevip(request):
     template_name = 'home_vip.html'
 
     return render(request, 'home_vip.html')
+
+def register(request):
+
+    if request.method == 'POST':
+
+        form = RegistrationForm(request.POST)
+
+        if form.is_valid():
+
+            user = form.save()
+
+            user.save()
+
+
+            messages.success(request, 'Registration successful.Recharge your account to access our vip services')
+
+            return redirect('/information/')
+
+    else:
+        form = RegistrationForm()
+
+
+    return render(request, 'account/register.html', {'form':form})
