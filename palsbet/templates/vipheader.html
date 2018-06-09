@@ -2,18 +2,26 @@
 
 {% block header %}
 
-<div style="background-color:blue"><div align = "right"  style="color:white">  WELCOME {{ user.username }}/   <a href="{% url 'logout' %}">LOG OUT</a></div></div>
+<div style="background-color:blue"><div align = "right"  style="color:white"> <b> WELCOME {{ user.username }}/  </b> <a href="{% url 'logout' %}">LOG OUT</a></div></div>
 
+<div class="w3-bar  w3-blue w3-padding-16 w3-large">
+  <a href="/homevip/" class="w3-bar-item w3-button"><b>
+    <font style="color:white">1XPredict Vip</font></b></a>
+    <a href="/homejackpot/" style="float:right" class="w3-bar-item w3-button w3-hide-small">Jackpot</a>
+    <a href="/homerollover/"style="float:right" class="w3-bar-item w3-button w3-hide-small">Roll Over</a>
+    <a href="/homepunterpicks/"style="float:right" class="w3-bar-item w3-button w3-hide-small">Punter Pick</a>
+    <a href="/homeviptips/"style="float:right" class="w3-bar-item w3-button w3-hide-small">Vip Tips</a>
+    <a href="/homevip/"style="float:right" class="w3-bar-item w3-button w3-hide-small">Home</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+</div>
 
-<ul class="topnav">
-  <h3 align = "center" ><font style="color:yellow">1X</font><font style="color:white">Predict</font></h3>
-  <p align = "center" >We predict, You bet<p>
-  <li><a  href="/homevip/"><font style="color:white">Home</font></a></li>
-  <li><a href="/homeviptips/"><font style="color:white">Vip Tips</font></a></li>
-  <li><a  href="/homepunterpicks/"><font style="color:white">Punter Pick </font></a></li>
-  <li><a href="/homerollover/"><font style="color:white">Roll Over</font></a></li>
-  <li><a href="/homejackpot/"><font style="color:white">Jackpot</font></a></li>
-</ul>
+<div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium">
+  <a href="/homevip/" class="w3-bar-item w3-button">Home</a>
+  <a href="/homeviptips/" class="w3-bar-item w3-button">Vip Tips</a>
+  <a href="/homepunterpicks/" class="w3-bar-item w3-button">Punter Pick</a>
+  <a href="/homerollover/" class="w3-bar-item w3-button">Roll Over</a>
+  <a href="/homejackpot/" class="w3-bar-item w3-button">Jackpot</a>
+</div>
 
 
 {% endblock %}
