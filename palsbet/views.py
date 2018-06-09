@@ -14,6 +14,8 @@ from . forms import RegistrationForm
 
 from django.contrib import messages
 
+def play(request):
+    return redirect("https://play.google.com/store/apps/details?id=com.a1xpredict.a1xpredict")
 
 def optout(request):
     return redirect("http://www.crafttechsolution.com/")
