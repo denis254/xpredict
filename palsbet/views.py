@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.views.generic import TemplateView
 
-from . models import FreeTipsGames, SingleBetGames, VipTips, PunterPick, RollOver, Notification
+from . models import FreeTipsGames, SingleBetGames, VipTips, PunterPick, RollOver, Notification, Jackpot
 
 from django.utils import timezone
 
@@ -31,6 +31,23 @@ class FreeTipsGamesViewSet(viewsets.ModelViewSet):
     queryset = FreeTipsGames.objects.all()
 
     serializer_class = FreeTipsGamesSerializer
+
+def jackpotp(request):
+
+    model = Jackpot
+
+    template_name = 'jackpot.html'
+
+    args = {}
+
+    jackpot = Jackpot.objects.filter(
+        published_date__lte=timezone.now()
+    ).order_by('-published_date')[:17]
+
+
+    args ['jackpot'] = jackpot
+
+    return render(request, 'jackpot.html', args)
 
 def home(request):
 
@@ -67,12 +84,6 @@ def jackpot(request):
     template_name = 'hjackpot.html'
 
     return render(request, 'hjackpot.html')
-
-def jackpotp(request):
-
-    template_name = 'jackpot.html'
-
-    return render(request, 'jackpot.html')
 
 def rollover(request):
 

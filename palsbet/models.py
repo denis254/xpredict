@@ -18,6 +18,26 @@ class Visitor(models.Model):
     user = models.OneToOneField(AUTH_USER_MODEL, null=False, related_name='visitor', on_delete=models.CASCADE,)
     session_key = models.CharField(null=False, max_length=40)
 
+class Jackpot(models.Model):
+
+    published_date = models.DateTimeField('Date Published', auto_now_add=True)
+
+    Number = models.PositiveIntegerField(default = 0)
+
+    Home_Team = models.CharField(max_length = 200)
+
+    Home_Odds = models.CharField(max_length = 50, null = True)
+
+    Draw = models.CharField(max_length = 50, null = True)
+
+    Away_Team = models.CharField(max_length = 200)
+
+    Away_Odds = models.CharField(max_length = 50, null = True)
+
+    Prediction = models.CharField(max_length = 100, null = True, choices=[('Running','Running'),('Home','Home'),('Draw','Draw'),('Away','Away')])
+
+    def __str__(self):
+       return self.Home_Team
 
 class FreeTipsGames(models.Model):
 
@@ -27,9 +47,9 @@ class FreeTipsGames(models.Model):
 
     home_team = models.CharField(max_length = 200)
 
-    home_score = models.IntegerField(default = 0)
+    home_score = models.PositiveIntegerField(default = 0)
 
-    away_score = models.IntegerField(default = 0)
+    away_score = models.PositiveIntegerField(default = 0)
 
     away_team = models.CharField(max_length = 200)
 
@@ -50,9 +70,9 @@ class SingleBetGames(models.Model):
 
     home_team = models.CharField(max_length = 200)
 
-    home_score = models.IntegerField(default = 0)
+    home_score = models.PositiveIntegerField(default = 0)
 
-    away_score = models.IntegerField(default = 0)
+    away_score = models.PositiveIntegerField(default = 0)
 
     away_team = models.CharField(max_length = 200)
 
@@ -71,9 +91,9 @@ class VipTips(models.Model):
 
     home_team = models.CharField(max_length = 200)
 
-    home_score = models.IntegerField(default = 0)
+    home_score = models.PositiveIntegerField(default = 0)
 
-    away_score = models.IntegerField(default = 0)
+    away_score = models.PositiveIntegerField(default = 0)
 
     away_team = models.CharField(max_length = 200)
 
@@ -93,9 +113,9 @@ class PunterPick(models.Model):
 
     home_team = models.CharField(max_length = 200)
 
-    home_score = models.IntegerField(default = 0)
+    home_score = models.PositiveIntegerField(default = 0)
 
-    away_score = models.IntegerField(default = 0)
+    away_score = models.PositiveIntegerField(default = 0)
 
     away_team = models.CharField(max_length = 200)
 
@@ -115,9 +135,9 @@ class RollOver(models.Model):
 
     home_team = models.CharField(max_length = 200)
 
-    home_score = models.IntegerField(default = 0)
+    home_score = models.PositiveIntegerField(default = 0)
 
-    away_score = models.IntegerField(default = 0)
+    away_score = models.PositiveIntegerField(default = 0)
 
     away_team = models.CharField(max_length = 200)
 
