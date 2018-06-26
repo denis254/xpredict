@@ -81,9 +81,20 @@ def information(request):
 
 def jackpot(request):
 
-    template_name = 'hjackpot.html'
+        model = Jackpot
 
-    return render(request, 'hjackpot.html')
+        template_name = 'hjackpot.html'
+
+        args = {}
+
+        jackpot = Jackpot.objects.filter(
+            published_date__lte=timezone.now()
+        ).order_by('-published_date')[:17]
+
+
+        args ['jackpot'] = jackpot
+
+        return render(request, 'hjackpot.html', args)
 
 def rollover(request):
 

@@ -22,6 +22,43 @@
 
 {% block content %}
 
+<h2 align="center" class = "h4">Sportpesa Jackpots</h2>
+
+<div style="overflow-x:auto;">
+  <table border="2" cellpadding = "5">
+
+    <tr style='background-color: indigo'>
+  <th style='color: white'>No</th>
+  <th style='color: white'>Home Team</th>
+  <th style='color: white'>Home Odds</th>
+  <th style='color: white'>Draw</th>
+  <th style='color: white'>Away Team</th>
+  <th style='color: white'>Away_Odds</th>
+  <th style='color: white'>Prediction</th>
+  </tr>
+
+      {% for item in jackpot %}
+      <tr>
+          <td style='background-color: plum;' >{{ item.Number }}</td>
+
+          <td >{{ item.Home_Team }}</td>
+
+          <td style='background-color: plum;' >{{ item.Home_Odds}}</td>
+
+          <td style='background-color: plum;' >{{ item.Draw}}</td>
+
+          <td>{{ item.Away_Team}}</td>
+
+          <td style='background-color: plum;' >{{ item.Away_Odds}}</td>
+
+          <td style='background-color: plum;' >{{ item.Prediction}}</td>
+
+
+      </tr>
+      {% endfor %}
+  </table>
+</div>
+
 <div align = "center">
 <h2 align="center" class = "h4">
 	1XPredict.com Jackpot Package
