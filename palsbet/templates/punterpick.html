@@ -34,6 +34,7 @@
   <th style='color: white'>Away Score</th>
   <th style='color: white'>Away Team</th>
   <th style='color: white'>Prediction</th>
+  <th style='color: white'>Odds</th>
   <th style='color: white'>Status</th>
   </tr>
 
@@ -50,6 +51,8 @@
           <td>{{ item.away_team}}</td>
 
           <td style='background-color: plum;' >{{ item.prediction}}</td>
+
+          <td>{{ item.odds}}</td>
 
           {% if item.status == 'Lost' %}
 

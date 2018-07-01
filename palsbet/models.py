@@ -55,6 +55,8 @@ class FreeTipsGames(models.Model):
 
     prediction = models.CharField(max_length = 100)
 
+    odds = models.CharField(max_length = 100, null = True, blank = True)
+
     status = models.CharField(max_length = 100, choices=[('Running','Running'),('Won','Won'),('Lost','Lost')])
 
     def __str__(self):
@@ -78,6 +80,8 @@ class SingleBetGames(models.Model):
 
     prediction = models.CharField(max_length = 100)
 
+    odds = models.CharField(max_length = 100, null = True, blank = True)
+
     status = models.CharField(max_length = 100, choices=[('Running','Running'),('Won','Won'),('Lost','Lost')])
 
     def __str__(self):
@@ -98,6 +102,8 @@ class VipTips(models.Model):
     away_team = models.CharField(max_length = 200)
 
     prediction = models.CharField(max_length = 100)
+
+    odds = models.CharField(max_length = 100, null = True, blank = True)
 
     status = models.CharField(max_length = 100, choices=[('Running','Running'),('Won','Won'),('Lost','Lost')])
 
@@ -121,6 +127,8 @@ class PunterPick(models.Model):
 
     prediction = models.CharField(max_length = 100)
 
+    odds = models.CharField(max_length = 100, null = True, blank = True)
+
     status = models.CharField(max_length = 100, choices=[('Running','Running'),('Won','Won'),('Lost','Lost')])
 
     def __str__(self):
@@ -142,6 +150,8 @@ class RollOver(models.Model):
     away_team = models.CharField(max_length = 200)
 
     prediction = models.CharField(max_length = 100)
+
+    odds = models.CharField(max_length = 100, null = True, blank = True)
 
     status = models.CharField(max_length = 100, choices=[('Running','Running'),('Won','Won'),('Lost','Lost')])
 
