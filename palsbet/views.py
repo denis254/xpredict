@@ -125,6 +125,12 @@ def viptips(request):
 
     return render(request, 'viptips.html')
 
+def privacy(request):
+
+    template_name = 'privacy.html'
+
+    return render(request, 'privacy.html')
+
 def singlebet(request):
 
     model = SingleBetGames
