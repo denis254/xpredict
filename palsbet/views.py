@@ -2,13 +2,9 @@ from django.shortcuts import render, redirect
 
 from django.views.generic import TemplateView
 
-from . models import FreeTipsGames, SingleBetGames, VipTips, PunterPick, RollOver, Notification, Jackpot
+from . models import FreeTipsGames, VipTips, PunterPick, RollOver
 
 from django.utils import timezone
-
-from . serializers import FreeTipsGamesSerializer, SingleBetGamesSerializer
-
-from rest_framework import viewsets
 
 from . forms import RegistrationForm
 
@@ -19,35 +15,6 @@ def play(request):
 
 def optout(request):
     return redirect("http://www.crafttechsolution.com/")
-
-class SingleBetGamesViewSet(viewsets.ModelViewSet):
-
-    queryset = SingleBetGames.objects.all()
-
-    serializer_class = SingleBetGamesSerializer
-
-class FreeTipsGamesViewSet(viewsets.ModelViewSet):
-
-    queryset = FreeTipsGames.objects.all()
-
-    serializer_class = FreeTipsGamesSerializer
-
-def jackpotp(request):
-
-    model = Jackpot
-
-    template_name = 'jackpot.html'
-
-    args = {}
-
-    jackpot = Jackpot.objects.filter(
-        published_date__lte=timezone.now()
-    ).order_by('-published_date')[:17]
-
-
-    args ['jackpot'] = jackpot
-
-    return render(request, 'jackpot.html', args)
 
 def home(request):
 
@@ -79,45 +46,11 @@ def information(request):
     return render(request, 'information.html')
 
 
-def jackpot(request):
-
-        model = Jackpot
-
-        template_name = 'hjackpot.html'
-
-        args = {}
-
-        jackpot = Jackpot.objects.filter(
-            published_date__lte=timezone.now()
-        ).order_by('-published_date')[:17]
-
-
-        args ['jackpot'] = jackpot
-
-        return render(request, 'hjackpot.html', args)
-
 def rollover(request):
 
     template_name = 'rollover.html'
 
     return render(request, 'rollover.html')
-
-def notification(request):
-
-    model = Notification
-
-    template_name = 'notification.html'
-
-    args = {}
-
-    Notifications = Notification.objects.filter(
-        published_date__lte=timezone.now()
-    ).order_by('-published_date')[:30]
-
-
-    args ['Notifications'] = Notifications
-
-    return render(request, 'notification.html', args)
 
 def viptips(request):
 
@@ -130,23 +63,6 @@ def privacy(request):
     template_name = 'privacy.html'
 
     return render(request, 'privacy.html')
-
-def singlebet(request):
-
-    model = SingleBetGames
-
-    template_name = 'singlebet.html'
-
-    args = {}
-
-    single_bet_teams = SingleBetGames.objects.filter(
-        published_date__lte=timezone.now()
-    ).order_by('-published_date')[:10]
-
-
-    args ['single_bet_teams'] = grouped(single_bet_teams, 1)
-
-    return render(request, 'singlebet.html', args)
 
 def contactus(request):
 

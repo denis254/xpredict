@@ -2,19 +2,9 @@ from django.urls import path, include
 
 from palsbet import views
 
-from rest_framework import routers
-
-router = routers.DefaultRouter()
-
-router.register(r'FreeTipsGames', views.FreeTipsGamesViewSet)
-
-router.register(r'SingleBetGames', views.SingleBetGamesViewSet)
-
-from . views import rolloverh, play, information, register, notification, jackpotp, punterpick, homeviptips, payment, homevip, timeofsending, modeofsending, home, viewolderesults, singlebet, androidapp, jackpot, rollover, viptips, guide, howmanyodds, privacy
+from . views import rolloverh, play, information, register, punterpick, homeviptips, payment, homevip, timeofsending, modeofsending, home, viewolderesults, androidapp, rollover, viptips, guide, howmanyodds, privacy
 
 urlpatterns = [
-
-    path('freetipsp/', include(router.urls)),
 
     path('', home),
 
@@ -28,17 +18,11 @@ urlpatterns = [
 
     path('register/', register),
 
-    path('jackpot/', jackpot),
-
     path('crafttechsolution/', views.optout, name = "optout"),
 
     path('viewolderesults/', viewolderesults),
 
-    path('singlebet/', singlebet),
-
     path('androidapp/', androidapp),
-
-    path('homejackpot/', jackpotp),
 
     path('rollover/', rollover),
 
@@ -57,8 +41,6 @@ urlpatterns = [
     path('home_vip/', homevip),
 
     path('payment/', payment),
-
-    path('notification/', notification),
 
     path('homevip/', homevip),
 
