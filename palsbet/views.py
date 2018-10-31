@@ -18,7 +18,20 @@ def optout(request):
 
 def home(request):
 
-    return redirect("http://www.predictpoa.com/")
+    model = FreeTipsGames
+
+    template_name = 'home_page.html'
+
+    args = {}
+
+    home_page_teams = FreeTipsGames.objects.filter(
+        published_date__lte=timezone.now()
+    ).order_by('-published_date')[:10]
+
+
+    args ['home_page_teams'] = home_page_teams
+
+    return render(request, 'home_page.html', args)
 
 def androidapp(request):
 
