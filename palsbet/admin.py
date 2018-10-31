@@ -2,10 +2,36 @@ from django.contrib import admin
 
 from . models import FreeTipsGames, VipTips, PunterPick, RollOver
 
-admin.site.register(FreeTipsGames)
+from import_export.admin import ImportExportModelAdmin
 
-admin.site.register(VipTips)
+from django.contrib.auth.models import User
 
-admin.site.register(PunterPick)
+from django.contrib.auth.admin import UserAdmin as BaseAdmin
 
-admin.site.register(RollOver)
+from import_export import resources
+
+class UserResource(resources.ModelResource):
+    class Meta:
+        model = User
+
+class UserAdmin(BaseAdmin, ImportExportModelAdmin):
+    resource_class = UserResource
+
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
+
+@admin.register(FreeTipsGames)
+class FreeTipsGamesAdmin(ImportExportModelAdmin):
+    pass
+
+@admin.register(VipTips)
+class VipTipsAdmin(ImportExportModelAdmin):
+    pass
+
+@admin.register(PunterPick)
+class PunterPickAdmin(ImportExportModelAdmin):
+    pass
+
+@admin.register(RollOver)
+class RollOverAdmin(ImportExportModelAdmin):
+    pass
